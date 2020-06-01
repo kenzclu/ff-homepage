@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/homepage/static/css/main.3e0cd3e3.chunk.css",
-    "main.js": "/homepage/static/js/main.c49de9eb.chunk.js",
-    "main.js.map": "/homepage/static/js/main.c49de9eb.chunk.js.map",
+    "main.js": "/homepage/static/js/main.24853d37.chunk.js",
+    "main.js.map": "/homepage/static/js/main.24853d37.chunk.js.map",
     "runtime-main.js": "/homepage/static/js/runtime-main.35b25c23.js",
     "runtime-main.js.map": "/homepage/static/js/runtime-main.35b25c23.js.map",
     "static/css/2.5a69a89f.chunk.css": "/homepage/static/css/2.5a69a89f.chunk.css",
-    "static/js/2.d7cca58d.chunk.js": "/homepage/static/js/2.d7cca58d.chunk.js",
-    "static/js/2.d7cca58d.chunk.js.map": "/homepage/static/js/2.d7cca58d.chunk.js.map",
+    "static/js/2.0f37f870.chunk.js": "/homepage/static/js/2.0f37f870.chunk.js",
+    "static/js/2.0f37f870.chunk.js.map": "/homepage/static/js/2.0f37f870.chunk.js.map",
     "index.html": "/homepage/index.html",
-    "precache-manifest.34044bc0e5ea53ee548bf2a369f45a0a.js": "/homepage/precache-manifest.34044bc0e5ea53ee548bf2a369f45a0a.js",
+    "precache-manifest.eb0b1c652063cf912aa426a06668dc8e.js": "/homepage/precache-manifest.eb0b1c652063cf912aa426a06668dc8e.js",
     "service-worker.js": "/homepage/service-worker.js",
     "static/css/2.5a69a89f.chunk.css.map": "/homepage/static/css/2.5a69a89f.chunk.css.map",
     "static/css/main.3e0cd3e3.chunk.css.map": "/homepage/static/css/main.3e0cd3e3.chunk.css.map",
-    "static/js/2.d7cca58d.chunk.js.LICENSE.txt": "/homepage/static/js/2.d7cca58d.chunk.js.LICENSE.txt",
+    "static/js/2.0f37f870.chunk.js.LICENSE.txt": "/homepage/static/js/2.0f37f870.chunk.js.LICENSE.txt",
     "static/media/dnd.png": "/homepage/static/media/dnd.f5509bef.png",
     "static/media/github.jpg": "/homepage/static/media/github.33b0dc3e.jpg",
+    "static/media/homepage.png": "/homepage/static/media/homepage.4f5bfd26.png",
     "static/media/placeholder.jpg": "/homepage/static/media/placeholder.786923ca.jpg",
     "static/media/index.css": "/homepage/static/media/roboto-latin-900italic.ebf6d164.woff2",
     "static/media/uni.png": "/homepage/static/media/uni.9e7b1031.png",
@@ -24,8 +25,8 @@
   "entrypoints": [
     "static/js/runtime-main.35b25c23.js",
     "static/css/2.5a69a89f.chunk.css",
-    "static/js/2.d7cca58d.chunk.js",
+    "static/js/2.0f37f870.chunk.js",
     "static/css/main.3e0cd3e3.chunk.css",
-    "static/js/main.c49de9eb.chunk.js"
+    "static/js/main.24853d37.chunk.js"
   ]
 }
