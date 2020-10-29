@@ -1,0 +1,49 @@
+import React from "react"
+import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom"
+
+import Navbar from "./components/molecules/navbar/navbar"
+import About from "./components/pages/about/about"
+import Project from "./components/project"
+import Contact from "./components/contact"
+
+export const paths = [
+  {
+    path: "/",
+    exact: true,
+    component: About,
+    name: "About me",
+  },
+  {
+    path: "/projects",
+    component: Project,
+    name: "My Projects",
+  },
+  {
+    path: "/contact",
+    component: Contact,
+    name: "Contact Info",
+  },
+];
+
+function Base() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        {paths.map((path, i) => {
+          return (
+            <Route
+              key={`path-${i}`}
+              exact={path.exact || false}
+              path={path.path}
+              component={path.component}
+            />
+          );
+        })}
+        <Redirect to="/" />
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default Base;
