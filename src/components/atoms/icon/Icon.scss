@@ -1,0 +1,32 @@
+@import "../../../styles/theme";
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > a {
+    > img {
+      height: $spacing-24;
+      width: $spacing-24;
+
+      border-radius: $spacing-2;
+
+      -webkit-box-shadow: $color-primary-dark-3 0px 0 10px;
+      -moz-box-shadow: $color-primary-dark-3 0 0 10px;
+      box-shadow: $color-primary-dark-3 0 0 10px;
+
+      transition: $a-short;
+    }
+
+    > img:hover {
+      height: $spacing-32;
+      width: $spacing-32;
+    }
+  }
+
+  > div {
+    font-weight: $font-bold;
+  }
+}
