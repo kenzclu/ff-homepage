@@ -21,7 +21,7 @@ const post = async (params) => {
 export const sendEmail = async (data) => {
     const response = await post({
         url: '/send',
-        data: data
+        body: data
     })
     return response.data
 }
