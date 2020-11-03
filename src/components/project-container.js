@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@material-ui/core";
 import "./project-container.css";
 
 export default class ProjectContainer extends React.Component {
@@ -43,7 +42,7 @@ export default class ProjectContainer extends React.Component {
           >
             {this.props.children}
           </div>
-          {this.props.host ? (
+          {/* {this.props.host ? (
             <div className="button-container">
               <Button
                 variant="outlined"
@@ -74,7 +73,7 @@ export default class ProjectContainer extends React.Component {
                 src={require("../assets/github.jpg")}
               ></img>
             </Button>
-          )}
+          )} */}
         </div>
       </div>
     );

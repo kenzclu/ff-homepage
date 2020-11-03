@@ -5,8 +5,6 @@ import {
   TransitionGroup,
 } from "react-transition-group";
 import "./project.css";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ProjectContainer from "./project-container.js";
 import dnd from "../assets/dnd.png";
 import uni from "../assets/uni.png";
@@ -178,7 +176,7 @@ export default class Project extends React.Component {
           className="container-navigator-button-left"
           onClick={() => this.moveLeft()}
         >
-          <ChevronLeftIcon />
+          {'<'}
         </div>
         <div className="dot-container">
           <span
@@ -203,7 +201,7 @@ export default class Project extends React.Component {
           className="container-navigator-button-right"
           onClick={() => this.moveRight()}
         >
-          <ChevronRightIcon />
+          {'>'}
         </div>
       </div>
     );

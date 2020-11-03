@@ -15,7 +15,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
 
+  max-width: $monitor-sm;
+  min-width: $mobile-sm;
   height: calc(100vh - #{$spacing-32});
 
   overflow-y: scroll;

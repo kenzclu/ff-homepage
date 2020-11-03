@@ -30,7 +30,7 @@ function About() {
       </div>
       <div>
         Apart from coding and working, I like to relax by playing video games
-        and board games. Unfortunately, due to COVID-19, have not had many
+        and board games. Unfortunately, due to COVID-19, there has not been many
         opportunities to do the latter.
       </div>
       <div className="container">

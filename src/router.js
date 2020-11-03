@@ -4,7 +4,7 @@ import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom";
 import Navbar from "./components/molecules/navbar/navbar";
 import About from "./components/pages/about/about";
 import Project from "./components/project";
-import Contact from "./components/contact";
+import Contact from "./components/pages/contact/contact";
 
 export const paths = [
   {

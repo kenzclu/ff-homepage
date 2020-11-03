@@ -1,0 +1,65 @@
+@import '../../../styles/theme';
+
+%input {
+  padding: $spacing-2;
+  margin-bottom: $spacing-4;
+
+  width: inherit;
+
+  border-color: $color-primary-dark-3;
+  border-radius: $spacing-1;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  h2 {
+    padding: $spacing-4 0;
+  }
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: $spacing-64;
+
+    > input {
+      @extend %input;
+
+      height: $spacing-12;
+
+      &.disabled {
+        background-color: $color-primary-grey;
+      }
+    }
+
+    > textarea {
+      @extend %input;
+    }
+
+    [type='submit'] {
+      margin: 0;
+
+      color: white;
+      background-color: $color-secondary-blue;
+    }
+  }
+
+  .error {
+    margin: $spacing-4 0;
+
+    height: $spacing-8;
+    width: $spacing-64;
+
+    line-height: $spacing-8;
+
+    color: white;
+    background-color: red;
+  }
+}
