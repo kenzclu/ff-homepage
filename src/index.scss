@@ -5,6 +5,8 @@
 body {
   min-width: 320px;
   font-family: "Open Sans", sans-serif;
+
+  background-image: url(./assets/background.jpg);
 }
 
 a {
@@ -21,6 +23,10 @@ a {
   max-width: $monitor-sm;
   min-width: $mobile-sm;
   height: calc(100vh - #{$spacing-32});
+
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 
   overflow-y: scroll;
 }
