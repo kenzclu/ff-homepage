@@ -176,7 +176,7 @@ export default class Project extends React.Component {
           className="container-navigator-button-left"
           onClick={() => this.moveLeft()}
         >
-          {'<'}
+          {"<"}
         </div>
         <div className="dot-container">
           <span
@@ -201,7 +201,7 @@ export default class Project extends React.Component {
           className="container-navigator-button-right"
           onClick={() => this.moveRight()}
         >
-          {'>'}
+          {">"}
         </div>
       </div>
     );

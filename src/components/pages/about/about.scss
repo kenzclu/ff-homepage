@@ -1,26 +1,27 @@
 @import "../../../styles/theme";
 
-.about {
+h1 {
+  padding: $spacing-1;
+
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-4 0;
+
+  width: 100%;
+}
+
+.menu-options {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-top: $spacing-4;
 
-  height: inherit;
-  width: 70%;
-  max-width: $monitor-sm;
-  min-width: $mobile-sm;
+  width: 50%;
 
-  > div {
-    padding: $spacing-4 0;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: $spacing-4 0;
-
-    width: 100%;
+  > a {
+    margin-left: $spacing-4;
   }
 }

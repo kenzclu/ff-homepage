@@ -17,6 +17,14 @@ function Navbar() {
     );
   }, [history.location]);
 
+  useEffect(() => {
+    history.listen(() => {
+      setActiveTab(
+        paths.findIndex((path) => path.path === history.location.pathname)
+      );
+    });
+  }, []);
+
   return (
     <div className="navbar">
       <div className="top">
@@ -27,14 +35,16 @@ function Navbar() {
       <div className="bottom">
         {paths.map((path, index) => {
           return (
-            <Link to={path.path} key={`tab-${index}`}>
-              <div
-                className={classNames("tabs", { active: activeTab === index })}
-                onClick={() => setActiveTab(index)}
-              >
-                {path.name}
-              </div>
-            </Link>
+            activeTab === index && (
+              <Link to={path.path} key={`tab-${index}`}>
+                <div
+                  className={classNames("tabs")}
+                  onClick={() => setActiveTab(index)}
+                >
+                  {path.name}
+                </div>
+              </Link>
+            )
           );
         })}
       </div>

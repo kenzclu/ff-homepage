@@ -11,7 +11,7 @@ export const paths = [
     path: "/",
     exact: true,
     component: About,
-    name: "About me",
+    name: "Home",
   },
   {
     path: "/projects",
@@ -21,7 +21,7 @@ export const paths = [
   {
     path: "/contact",
     component: Contact,
-    name: "Contact Info",
+    name: "Contact",
   },
 ];
 

@@ -10,6 +10,8 @@
 
   background-color: $color-primary-dark;
 
+  font-family: "VT323", monospace;
+
   .top {
     display: flex;
     align-items: center;
@@ -25,7 +27,6 @@
     }
 
     .name {
-      font-family: "VT323", monospace;
       font-size: $font-4xl;
 
       color: $color-secondary-white;
@@ -40,7 +41,7 @@
     height: $spacing-16;
     width: 100%;
 
-    font-size: $font-lg;
+    font-size: $font-4xl;
     font-weight: $font-light;
 
     color: $color-secondary-white;

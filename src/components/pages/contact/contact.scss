@@ -1,4 +1,4 @@
-@import '../../../styles/theme';
+@import "../../../styles/theme";
 
 %input {
   padding: $spacing-2;
@@ -17,6 +17,8 @@
   justify-content: center;
 
   text-align: center;
+
+  font-size: $font-xl;
 
   h2 {
     padding: $spacing-4 0;
@@ -43,7 +45,7 @@
       @extend %input;
     }
 
-    [type='submit'] {
+    [type="submit"] {
       margin: 0;
 
       color: white;
