@@ -10,16 +10,14 @@ function About() {
       <div>SECONDARY: Software Developer</div>
       <h2>DESCRIPTION</h2>
       <div>
-        Hailing from the lands of the sheep, Knew Zilland. Kenneth is a
-        penultimate student studying Computer Science at an academy known as
-        University of New South Whales. The academy is situated in Ozstralia, a
-        dangerous country where terrifying beasts known as "Drop Bears" rule the
-        land.
+        Kenneth is a penultimate student studying Computer Science at the
+        University of New South Wales. Aside from programming, he enjoys video
+        games and is a huge fan of the Final Fantasy and Persona series.
+        Additionally, he also enjoys eating food, maybe a little too much...
       </div>
       <div>
-        It is now the 21st century, and Kenneth has decided to take up arms and
-        rid the country of its treacherous tyrants. Over at the academy, Kenneth
-        has learned and "mastered" many technologies and skills in preparation.
+        Below are a list of skills that Kenneth has developed throughout
+        university and work:
       </div>
       <h2>SKILLS</h2>
       <ul>

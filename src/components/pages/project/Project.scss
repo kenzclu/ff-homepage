@@ -1,0 +1,50 @@
+@import "../../../styles/theme";
+
+.project-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    text-decoration: underline;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > img {
+      height: $spacing-64;
+      width: auto;
+
+      margin: $spacing-4 auto;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .project-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .navigation {
+      padding: 0 $spacing-4;
+
+      border: 2px solid black;
+
+      box-shadow: 2px 2px grey;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .navigation:hover {
+      background-color: $color-primary-dark-3;
+    }
+  }
+}

@@ -11,6 +11,7 @@
   background-color: $color-primary-dark;
 
   font-family: "VT323", monospace;
+  text-align: center;
 
   .top {
     display: flex;
@@ -30,6 +31,10 @@
       font-size: $font-4xl;
 
       color: $color-secondary-white;
+
+      @media screen and (max-width: $mobile) {
+        font-size: $font-xl;
+      }
     }
   }
 

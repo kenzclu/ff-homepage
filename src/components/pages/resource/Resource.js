@@ -10,9 +10,9 @@ function Resource() {
   return (
     <Page back>
       <h1>
-        <u>ITEMS</u>
+        <u>ADDITIONAL INFO</u>
       </h1>
-      <h3>Inventory</h3>
+      <h5>Short summary of my academic career and work experience</h5>
       <div className="test">
         <Icon
           src={linkedin}

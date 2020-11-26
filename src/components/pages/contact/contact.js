@@ -29,7 +29,7 @@ function Contact() {
   return (
     <Page back>
       <div className="contact">
-        <h1>OPTIONS</h1>
+        <h1>CONTACT INFORMATION</h1>
         <div>
           Email me at{" "}
           <u>

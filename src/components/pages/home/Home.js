@@ -23,14 +23,17 @@ function Home() {
         <u>Menu</u>
       </h1>
       <div className="menu-options">
-        <Link to="/status">
-          <Option option="STATUS" />
+        <Link to="/about/website">
+          <Option option="WEBSITE" />
         </Link>
         <Link to="/resources">
-          <Option option="ITEMS" />
+          <Option option="RESOURCES" />
+        </Link>
+        <Link to="/projects">
+          <Option option="PROJECTS" />
         </Link>
         <Link to="/contact">
-          <Option option="OPTIONS" />
+          <Option option="CONTACT" />
         </Link>
       </div>
     </Page>
