@@ -28,8 +28,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: $spacing-4;
 
-    width: $spacing-64;
+    width: 100%;
 
     > input {
       @extend %input;
@@ -47,6 +48,8 @@
 
     [type="submit"] {
       margin: 0;
+
+      width: $spacing-32;
 
       color: white;
       background-color: $color-secondary-blue;

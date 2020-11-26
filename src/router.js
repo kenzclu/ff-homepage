@@ -2,16 +2,22 @@ import React from "react";
 import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/molecules/navbar/navbar";
-import About from "./components/pages/about/about";
 import Project from "./components/project";
 import Contact from "./components/pages/contact/contact";
+import Home from "./components/pages/home/Home";
+import About from "./components/pages/about/About";
 
 export const paths = [
   {
     path: "/",
     exact: true,
-    component: About,
+    component: Home,
     name: "Home",
+  },
+  {
+    path: "/about",
+    component: About,
+    name: "About"
   },
   {
     path: "/projects",

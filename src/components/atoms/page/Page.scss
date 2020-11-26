@@ -14,6 +14,8 @@
   max-width: $monitor-sm;
   min-width: $mobile-sm;
 
+  overflow-x: scroll;
+
   .back {
     font-size: $font-2xl;
   }
@@ -34,5 +36,9 @@
       align-items: center;
       justify-content: center;
     }
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
   }
 }
