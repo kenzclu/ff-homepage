@@ -1,29 +1,24 @@
 # homepage
 
-Interactive portfolio created using react with the help of [material-ui](https://material-ui.com/) and hosted using [Express](https://expressjs.com/)
+Final fantasy themed portfolio written in ReactJS and Sass. Hosted using [Express](https://expressjs.com/).
 
 ## Prerequisites
 
 - [npm](https://github.com/npm/cli)
+Install project dependencies by running
+```npm install```
 
-## Setup
+### `npm run start`
 
-Once you have cloned the repository you need install the dependencies by running
+Runs the app in the development mode.<br />
 
-```
-npm install
-```
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Execution
+### `npm run build`
 
-You can run the program by
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```
-npm run start
-```
-
-You also build the project into the `build/` directory using
-
-```
-npm run build
-```
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
