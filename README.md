@@ -15,6 +15,10 @@ Runs the app in the development mode.<br />
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `npm run prettier`
+
+Enforces code standards using the default rules from `Prettier`
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
