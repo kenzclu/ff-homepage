@@ -1,0 +1,9 @@
+@import "../../../styles/theme";
+
+.test {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-4;
+
+  width: 100%;
+}

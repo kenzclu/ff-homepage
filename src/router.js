@@ -6,6 +6,7 @@ import Project from "./components/project";
 import Contact from "./components/pages/contact/contact";
 import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
+import Resource from "./components/pages/resource/Resource";
 
 export const paths = [
   {
@@ -16,8 +17,14 @@ export const paths = [
   },
   {
     path: "/about",
+    exact: true,
     component: About,
-    name: "About"
+    name: "About",
+  },
+  {
+    path: "/resources",
+    component: Resource,
+    name: "Resources",
   },
   {
     path: "/projects",

@@ -29,7 +29,7 @@ function Navbar() {
     <div className="navbar">
       <div className="top">
         <img src={chock} alt="chocobo running" />
-        <div className="name">Kenneth L.</div>
+        <div className="name">Final Fantasy Homepage</div>
         <img src={chock} alt="chocobo running" />
       </div>
       <div className="bottom">

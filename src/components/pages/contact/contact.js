@@ -31,7 +31,10 @@ function Contact() {
       <div className="contact">
         <h1>OPTIONS</h1>
         <div>
-          Email me at <u><b>ken.zc.lu@gmail.com</b></u>
+          Email me at{" "}
+          <u>
+            <b>ken.zc.lu@gmail.com</b>
+          </u>
         </div>
         <h2>OR</h2>
         <form className="contact-form" onSubmit={handleSubmit}>
