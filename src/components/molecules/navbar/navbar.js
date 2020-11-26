@@ -23,7 +23,7 @@ function Navbar() {
         paths.findIndex((path) => path.path === history.location.pathname)
       );
     });
-  }, []);
+  });
 
   return (
     <div className="navbar">

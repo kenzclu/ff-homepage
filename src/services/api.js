@@ -21,6 +21,12 @@ const reducer = (state, action) => {
         inProgress: false,
         error: action.data,
       };
+    default:
+      return {
+        ...state,
+        inProgress: false,
+        error: "Error",
+      };
   }
 };
 

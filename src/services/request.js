@@ -9,13 +9,6 @@ const request = async (params) => {
   }
 };
 
-const get = async (params) => {
-  return request({
-    method: "get",
-    url: params.url,
-  });
-};
-
 const post = async (params) => {
   return request({
     method: "post",
@@ -29,13 +22,6 @@ export const sendEmail = async (data) => {
   const response = await post({
     url: "/send",
     body: data,
-  });
-  return response.data;
-};
-
-export const getResume = async (data) => {
-  const response = await get({
-    url: "/about/resume",
   });
   return response.data;
 };
