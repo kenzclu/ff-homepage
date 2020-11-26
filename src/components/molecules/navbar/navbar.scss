@@ -1,0 +1,71 @@
+@import "../../../styles/theme";
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+.navbar {
+  position: sticky;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0 $spacing-16;
+
+  background-color: $color-primary-dark;
+
+  font-family: "VT323", monospace;
+  text-align: center;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: $spacing-16;
+
+    img {
+      padding: 0 $spacing-4;
+
+      height: $spacing-12;
+      width: auto;
+    }
+
+    .name {
+      font-size: $font-4xl;
+
+      color: $color-secondary-white;
+
+      @media screen and (max-width: $mobile) {
+        font-size: $font-xl;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: $spacing-16;
+    width: 100%;
+
+    font-size: $font-4xl;
+    font-weight: $font-light;
+
+    color: $color-secondary-white;
+
+    .tabs {
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &.active {
+        color: $color-primary-dark-3;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: $font-3xl;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 0;
+  }
+}

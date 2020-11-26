@@ -1,0 +1,44 @@
+@import "../../../styles/theme";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-4;
+
+  font-family: "VT323";
+
+  height: inherit;
+  width: 70%;
+  max-width: $monitor-sm;
+  min-width: $mobile-sm;
+
+  .back {
+    font-size: $font-2xl;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-4;
+
+    height: inherit;
+    width: 100%;
+
+    border: 3px solid black;
+
+    background-color: #fefefe;
+
+    overflow-x: scroll;
+
+    &.page-center {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
