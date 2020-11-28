@@ -4,7 +4,7 @@ import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom";
 import Navbar from "./components/molecules/navbar/navbar";
 import Contact from "./components/pages/contact/contact";
 import Home from "./components/pages/home/Home";
-import About from "./components/pages/about/about";
+import About from "./components/pages/about/About";
 import Resource from "./components/pages/resource/Resource";
 import Project from "./components/pages/project/Project";
 import Website from "./components/pages/about/Website";

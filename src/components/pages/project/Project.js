@@ -60,7 +60,11 @@ function Project() {
           </h3>
         </div>
         <div className="project-container">
-          <img src={projectToDisplay.img} alt={projectToDisplay.name} />
+          <img
+            key={projectToDisplay.name}
+            src={projectToDisplay.img}
+            alt={projectToDisplay.name}
+          />
           <h1>{projectToDisplay.name}</h1>
           <h5>
             {"GITHUB: "}

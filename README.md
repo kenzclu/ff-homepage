@@ -5,8 +5,8 @@ Final fantasy themed portfolio written in ReactJS and Sass. Hosted using [Expres
 ## Prerequisites
 
 - [npm](https://github.com/npm/cli)
-Install project dependencies by running
-```npm install```
+  Install project dependencies by running
+  `npm install`
 
 ### `npm run start`
 

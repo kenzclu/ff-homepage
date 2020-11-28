@@ -5,19 +5,18 @@ function About() {
   return (
     <Page back>
       <h1>KENNETH</h1>
-      <h2>JOB</h2>
+      <h2 style={{ margin: "0.5rem 0" }}>JOB</h2>
       <div>PRIMARY: Computer Science student</div>
       <div>SECONDARY: Software Developer</div>
-      <h2>DESCRIPTION</h2>
+      <h2 style={{ margin: "0.5rem 0" }}>DESCRIPTION</h2>
       <div>
         Kenneth is a penultimate student studying Computer Science at the
         University of New South Wales. Aside from programming, he enjoys video
         games and is a huge fan of the Final Fantasy and Persona series.
-        Additionally, he also enjoys eating food, maybe a little too much...
       </div>
       <div>
-        Below are a list of skills that Kenneth has developed throughout
-        university and work:
+        Below are a list of tools that Kenneth has used throughout university
+        and work:
       </div>
       <h2>SKILLS</h2>
       <ul>

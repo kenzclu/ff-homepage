@@ -27,12 +27,8 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="top">
-        <img src={chock} alt="chocobo running" />
-        <div className="name">Final Fantasy Homepage</div>
-        <img src={chock} alt="chocobo running" />
-      </div>
       <div className="bottom">
+        <img src={chock} alt="chocobo running" />
         {paths.map((path, index) => {
           return (
             activeTab === index && (
@@ -47,6 +43,7 @@ function Navbar() {
             )
           );
         })}
+        <img src={chock} alt="chocobo running" />
       </div>
     </div>
   );
