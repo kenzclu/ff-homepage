@@ -1,0 +1,11 @@
+@import "../../../styles/theme";
+
+.logo {
+  width: auto;
+  height: $spacing-24;
+
+  background-image: url(../../../assets/logo.png);
+  background-repeat: no-repeat;
+  background-size: auto $spacing-16;
+  background-position: center;
+}
