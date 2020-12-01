@@ -1,11 +1,12 @@
-# homepage
+# ff-homepage
 
 Final fantasy themed portfolio written in ReactJS and Sass. Hosted using [Express](https://expressjs.com/).
 
 ## Prerequisites
 
 - [npm](https://github.com/npm/cli)
-  Install project dependencies by running
+
+Install dependencies by running
   `npm install`
 
 ### `npm run start`
