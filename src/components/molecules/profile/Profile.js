@@ -7,8 +7,8 @@ function Profile({ profile, label }) {
       <img className="profile-image" src={profile} alt="Chubby the chocobo" />
       <div className="profile-description">
         <h4>{label}</h4>
-        <div>LVL: Penultimate</div>
-        <div>WAM: 88.36/100</div>
+        <div>LVL: Senior Software Engineer</div>
+        <div>JOB: Editing Performance @ Canva</div>
       </div>
     </div>
   );
