@@ -19,8 +19,7 @@ function Resource() {
           href="https://www.linkedin.com/in/kenneth-zc-lu/"
           label="LinkedIn"
         />
-        <Icon src={document} href="/about/resume" label="Resume" />
-        <Icon src={github} href="https://github.com/tarotiger" label="Github" />
+        <Icon src={github} href="https://github.com/kenzclu" label="Github" />
       </div>
     </Page>
   );

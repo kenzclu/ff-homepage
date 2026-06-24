@@ -8,22 +8,22 @@ import "./Project.scss";
 const projects = [
   {
     name: "D&D Soundboard",
-    github: "https://github.com/tarotiger/dnd-soundboard",
-    url: "https://tarotiger.github.io/dnd-soundboard/",
+    github: "https://github.com/kenzclu/dnd-soundboard",
+    url: "https://kenzclu.github.io/dnd-soundboard/",
     img: dnd,
     description:
       "Personal interest project for learning ReactJS. Soundboard for the tabletop role-playing game Dungeons & Dragons. Features an interactive and simple user interface which supports both mobile and desktop use. Allows users to combine various soundtracks to create their desired ambient sound for any situation. Instant sounds are also available for added dramatic effect.",
   },
   {
     name: "Web Development Workshop",
-    github: "https://github.com/tarotiger/web-dev-workshop",
+    github: "https://github.com/kenzclu/web-dev-workshop",
     img: webdev,
     description:
       "Web development workshop made for the Winter 2020 CSESoc CompClub workshop. Compclub is the education portfolio under the student run society CSE which aims to introduce high school students to programming. This workshop covers the basics of HTML, CSS and JS as we teach students how to create their very own Olympic-themed countdown website.",
   },
   {
     name: "UNSW Assignments",
-    github: "https://github.com/tarotiger/uni-projects",
+    github: "https://github.com/kenzclu/uni-projects",
     img: uni,
     description:
       "Condensed list of fun university assignment I have completed. Examples include include a Git clone written in Bash and Perl as well as a command shell written in C.",
