@@ -26,7 +26,7 @@ function Website() {
         Design pattern and can be found{" "}
         <u>
           <b>
-            <a href="https://www.github.com/tarotiger/homepage">here</a>
+            <a href="https://github.com/kenzclu/ff-homepage">here</a>
           </b>
         </u>
         .
