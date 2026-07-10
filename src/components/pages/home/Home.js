@@ -4,15 +4,9 @@ import Profile from "../../molecules/profile/Profile";
 import Option from "../../atoms/option/Option";
 import Page from "../../atoms/page/Page";
 import party from "./party";
-import {
-  playMoveSound,
-  playConfirmSound,
-  playCancelSound,
-} from "../../atoms/sfx/sfx";
+import { playMoveSound, playConfirmSound } from "../../atoms/sfx/sfx";
 import "./Home.scss";
 
-// Left-pane command menu. PARTY is handled separately (index 0) since it
-// switches focus into the right pane rather than navigating to a route.
 const menuItems = [
   { label: "WEBSITE", to: "/about/website" },
   { label: "RESOURCES", to: "/resources" },
@@ -21,13 +15,11 @@ const menuItems = [
 ];
 
 function Home() {
-  // Roving DOM focus: refs to the real anchor elements, in visual/nav
-  // order. index 0 of menuRefs is always the PARTY entry.
+  // Roving DOM focus: refs to the real anchor elements, in visual/nav order.
   const menuRefs = useRef([]);
-  const partyRefs = useRef([]);
 
-  const setRef = (refs, index) => (el) => {
-    refs.current[index] = el;
+  const setMenuRef = (index) => (el) => {
+    menuRefs.current[index] = el;
   };
 
   const focusMenuItem = (index) => {
@@ -35,8 +27,8 @@ function Home() {
     menuRefs.current[(index + total) % total]?.focus();
   };
 
-  // Autofocus PARTY on mount so arrow-key nav works immediately, without
-  // requiring a Tab press first.
+  // Autofocus the first menu item on mount so arrow-key nav works
+  // immediately, without requiring a Tab press first.
   useEffect(() => {
     menuRefs.current[0]?.focus();
   }, []);
@@ -53,23 +45,6 @@ function Home() {
     }
   };
 
-  // Selecting PARTY (Enter or click) doesn't navigate anywhere — it moves
-  // focus into the right pane, onto the first party member.
-  const handleSelectParty = (event) => {
-    event.preventDefault();
-    playConfirmSound();
-    partyRefs.current[0]?.focus();
-  };
-
-  // Backspace from within the party pane returns focus to the PARTY entry.
-  const handlePartyKeyDown = (event) => {
-    if (event.key === "Backspace") {
-      event.preventDefault();
-      playCancelSound();
-      menuRefs.current[0]?.focus();
-    }
-  };
-
   return (
     <Page>
       <div className="home-panes">
@@ -78,42 +53,26 @@ function Home() {
             <u>Menu</u>
           </h1>
           <div className="menu-options">
-            <a
-              href="#party-pane"
-              ref={setRef(menuRefs, 0)}
-              onClick={handleSelectParty}
-              onKeyDown={(event) => handleMenuKeyDown(event, 0)}
-            >
-              <Option option="PARTY" />
-            </a>
-            {menuItems.map((item, index) => {
-              const menuIndex = index + 1;
-              return (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  ref={setRef(menuRefs, menuIndex)}
-                  onClick={playConfirmSound}
-                  onKeyDown={(event) => handleMenuKeyDown(event, menuIndex)}
-                >
-                  <Option option={item.label} />
-                </Link>
-              );
-            })}
+            {menuItems.map((item, index) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                ref={setMenuRef(index)}
+                onClick={playConfirmSound}
+                onKeyDown={(event) => handleMenuKeyDown(event, index)}
+              >
+                <Option option={item.label} />
+              </Link>
+            ))}
           </div>
         </div>
-        <div className="party-pane" id="party-pane">
+        <div className="party-pane">
           <h1>
             <u>Party</u>
           </h1>
           <div className="party-list">
-            {party.map((member, index) => (
-              <Link
-                key={member.name}
-                to={member.link}
-                ref={setRef(partyRefs, index)}
-                onKeyDown={handlePartyKeyDown}
-              >
+            {party.map((member) => (
+              <Link key={member.name} to={member.link}>
                 <Profile profile={member.profile} label={member.name} />
               </Link>
             ))}
