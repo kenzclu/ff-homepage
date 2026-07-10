@@ -1,7 +1,62 @@
 @import "../../../styles/theme";
 
+// Fixed-width gutter reserved for the cursor arrow so text never shifts
+// horizontally when the cursor appears/disappears.
+$option-gutter-width: 1.2em;
+
+@keyframes option-cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+// Shared "active" treatment (blinking cursor + gold text), applied on
+// hover, on forced `selected` state, and on keyboard focus of the
+// ancestor <Link> (see selectors below).
+@mixin option-active {
+  .option__gutter {
+    opacity: 1;
+    animation: option-cursor-blink 1s steps(1, start) infinite;
+  }
+
+  .option__text {
+    color: $color-secondary-yellow;
+  }
+}
+
 .option {
+  display: flex;
+  align-items: center;
   font-size: $font-3xl;
 
   cursor: pointer;
+
+  &__gutter {
+    flex: 0 0 $option-gutter-width;
+    display: inline-block;
+    text-align: center;
+    opacity: 0;
+  }
+
+  &__text {
+    transition: color $a-short ease;
+  }
+}
+
+// Mouse hover, or an explicit `selected` prop forcing the state on.
+.option:hover,
+.option.option--selected {
+  @include option-active;
+}
+
+// Option is normally rendered inside a react-router <Link> (an <a>), which
+// is the element that actually receives keyboard focus — .option itself
+// isn't focusable, so we key off the focused ancestor instead.
+a:focus-visible .option {
+  @include option-active;
 }
