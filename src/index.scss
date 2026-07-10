@@ -26,7 +26,7 @@ a:hover {
   justify-content: center;
   margin: auto;
 
-  max-width: $monitor-sm;
+  max-width: $monitor;
   min-width: $mobile-sm;
   height: calc(100vh - #{$spacing-32});
 

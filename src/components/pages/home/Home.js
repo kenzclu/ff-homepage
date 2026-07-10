@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Profile from "../../molecules/profile/Profile";
 import Option from "../../atoms/option/Option";
@@ -11,8 +11,8 @@ import {
 } from "../../atoms/sfx/sfx";
 import "./Home.scss";
 
-// Right-pane command menu. PARTY is handled separately (index 0) since it
-// switches focus into the left pane rather than navigating to a route.
+// Left-pane command menu. PARTY is handled separately (index 0) since it
+// switches focus into the right pane rather than navigating to a route.
 const menuItems = [
   { label: "WEBSITE", to: "/about/website" },
   { label: "RESOURCES", to: "/resources" },
@@ -35,6 +35,12 @@ function Home() {
     menuRefs.current[(index + total) % total]?.focus();
   };
 
+  // Autofocus PARTY on mount so arrow-key nav works immediately, without
+  // requiring a Tab press first.
+  useEffect(() => {
+    menuRefs.current[0]?.focus();
+  }, []);
+
   const handleMenuKeyDown = (event, index) => {
     if (event.key === "ArrowDown") {
       event.preventDefault();
@@ -48,7 +54,7 @@ function Home() {
   };
 
   // Selecting PARTY (Enter or click) doesn't navigate anywhere — it moves
-  // focus into the left pane, onto the first party member.
+  // focus into the right pane, onto the first party member.
   const handleSelectParty = (event) => {
     event.preventDefault();
     playConfirmSound();
@@ -67,23 +73,6 @@ function Home() {
   return (
     <Page>
       <div className="home-panes">
-        <div className="party-pane" id="party-pane">
-          <h1>
-            <u>Party</u>
-          </h1>
-          <div className="party-list">
-            {party.map((member, index) => (
-              <Link
-                key={member.name}
-                to={member.link}
-                ref={setRef(partyRefs, index)}
-                onKeyDown={handlePartyKeyDown}
-              >
-                <Profile profile={member.profile} label={member.name} />
-              </Link>
-            ))}
-          </div>
-        </div>
         <div className="menu-pane">
           <h1>
             <u>Menu</u>
@@ -111,6 +100,23 @@ function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+        <div className="party-pane" id="party-pane">
+          <h1>
+            <u>Party</u>
+          </h1>
+          <div className="party-list">
+            {party.map((member, index) => (
+              <Link
+                key={member.name}
+                to={member.link}
+                ref={setRef(partyRefs, index)}
+                onKeyDown={handlePartyKeyDown}
+              >
+                <Profile profile={member.profile} label={member.name} />
+              </Link>
+            ))}
           </div>
         </div>
       </div>
