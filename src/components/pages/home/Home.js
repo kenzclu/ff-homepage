@@ -26,6 +26,10 @@ function Home() {
   const menuRefs = useRef([]);
   const partyRefs = useRef([]);
 
+  const setRef = (refs, index) => (el) => {
+    refs.current[index] = el;
+  };
+
   const focusMenuItem = (index) => {
     const total = menuRefs.current.length;
     menuRefs.current[(index + total) % total]?.focus();
@@ -72,9 +76,7 @@ function Home() {
               <Link
                 key={member.name}
                 to={member.link}
-                ref={(el) => {
-                  partyRefs.current[index] = el;
-                }}
+                ref={setRef(partyRefs, index)}
                 onKeyDown={handlePartyKeyDown}
               >
                 <Profile profile={member.profile} label={member.name} />
@@ -89,27 +91,26 @@ function Home() {
           <div className="menu-options">
             <a
               href="#party-pane"
-              ref={(el) => {
-                menuRefs.current[0] = el;
-              }}
+              ref={setRef(menuRefs, 0)}
               onClick={handleSelectParty}
               onKeyDown={(event) => handleMenuKeyDown(event, 0)}
             >
               <Option option="PARTY" />
             </a>
-            {menuItems.map((item, index) => (
-              <Link
-                key={item.label}
-                to={item.to}
-                ref={(el) => {
-                  menuRefs.current[index + 1] = el;
-                }}
-                onClick={playConfirmSound}
-                onKeyDown={(event) => handleMenuKeyDown(event, index + 1)}
-              >
-                <Option option={item.label} />
-              </Link>
-            ))}
+            {menuItems.map((item, index) => {
+              const menuIndex = index + 1;
+              return (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  ref={setRef(menuRefs, menuIndex)}
+                  onClick={playConfirmSound}
+                  onKeyDown={(event) => handleMenuKeyDown(event, menuIndex)}
+                >
+                  <Option option={item.label} />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
