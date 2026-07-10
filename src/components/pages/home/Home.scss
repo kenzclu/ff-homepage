@@ -30,10 +30,6 @@ h1 {
 .menu-options {
   display: flex;
   flex-direction: column;
-
-  > a {
-    margin-left: $spacing-4;
-  }
 }
 
 @media screen and (max-width: $mobile) {

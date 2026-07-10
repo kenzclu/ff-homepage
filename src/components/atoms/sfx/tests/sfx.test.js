@@ -59,8 +59,8 @@ afterEach(() => {
 });
 
 describe("mute state", () => {
-  it("defaults to unmuted when nothing is persisted", () => {
-    expect(isMuted()).toBe(false);
+  it("defaults to muted when nothing is persisted", () => {
+    expect(isMuted()).toBe(true);
   });
 
   it("persists mute state via setMuted", () => {

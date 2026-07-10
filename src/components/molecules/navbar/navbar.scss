@@ -3,20 +3,41 @@
 
 .navbar {
   position: sticky;
+  top: 0;
+  z-index: 10;
 
   display: flex;
   flex-direction: column;
   padding: 0 $spacing-16;
 
-  background-color: $color-primary-dark;
+  // Dark navy/black gradient, matching the restyled menu box (Page.scss) so
+  // the navbar and the menu panel read as the same dark JRPG chrome.
+  background: linear-gradient(
+    180deg,
+    rgba($color-primary-dark, 0.97) 0%,
+    rgba($color-secondary-dark, 0.95) 100%
+  );
+  border-bottom: 3px solid $color-secondary-dark;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 
   font-family: "VT323", monospace;
   text-align: center;
 
+  // Thin gold accent line beneath the dark border, echoing the menu box's
+  // layered double-line border motif.
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+
+    background-color: $color-secondary-yellow;
+    opacity: 0.7;
+  }
+
   .bottom {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     height: $spacing-16;
     width: 100%;
@@ -24,22 +45,54 @@
     font-size: $font-4xl;
     font-weight: $font-light;
 
-    color: $color-secondary-white;
+    color: $color-secondary-blue-4;
 
-    img {
-      padding: 0 $spacing-4;
+    .side {
+      display: flex;
+      align-items: center;
+      flex: 1;
 
-      height: $spacing-12;
-      width: auto;
+      &.right {
+        justify-content: flex-end;
+      }
     }
 
-    .tabs {
-      cursor: pointer;
-      text-transform: uppercase;
+    .crumb {
+      flex: 2;
 
-      &.active {
-        color: $color-primary-dark-3;
+      // Current-page name reads as a header, so give it the same gold
+      // treatment as h1-h6 inside the menu box.
+      .tabs {
+        color: $color-secondary-yellow;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: default;
       }
+    }
+
+    .home-shortcut,
+    .mute-toggle {
+      display: inline-flex;
+
+      color: $color-secondary-blue-4;
+      padding: $spacing-2 $spacing-3;
+
+      transition: color $a-short;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-secondary-yellow;
+      }
+    }
+
+    .home-shortcut {
+      text-decoration: none;
+    }
+
+    .mute-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     @media screen and (max-width: $mobile) {

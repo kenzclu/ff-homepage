@@ -1,10 +1,7 @@
 const MUTE_STORAGE_KEY = "sfx-muted";
 
-// Default mute state when nothing has been persisted yet. This is a
-// personal/professional site that could be viewed unexpectedly with sound
-// on, so a future ticket may want to flip this to `true` — keep it as the
-// single source of truth for the default so that's a one-line change.
-const DEFAULT_MUTED = false;
+// Default mute state when nothing has been persisted yet.
+const DEFAULT_MUTED = true;
 
 // Lazily-created singleton AudioContext. Browsers require it to be created
 // (or resumed) after a user gesture, and creating a new one per sound is
@@ -26,15 +23,21 @@ const getAudioContext = () => {
   return audioContext;
 };
 
+// In-memory cache of the mute state so repeated `isMuted()` calls on the
+// hot path (e.g. one per arrow-key press) don't hit localStorage each time.
+// Populated lazily on first read and kept in sync by `setMuted`.
+let cachedMuted = null;
+
 export const isMuted = () => {
-  const stored = localStorage.getItem(MUTE_STORAGE_KEY);
-  if (stored === null) {
-    return DEFAULT_MUTED;
+  if (cachedMuted === null) {
+    const stored = localStorage.getItem(MUTE_STORAGE_KEY);
+    cachedMuted = stored === null ? DEFAULT_MUTED : stored === "true";
   }
-  return stored === "true";
+  return cachedMuted;
 };
 
 export const setMuted = (muted) => {
+  cachedMuted = muted;
   localStorage.setItem(MUTE_STORAGE_KEY, muted ? "true" : "false");
 };
 
@@ -67,7 +70,7 @@ const playTone = ({ type, startFreq, endFreq, duration, volume = 0.2 }) => {
 
   oscillator.type = type;
   oscillator.frequency.setValueAtTime(startFreq, now);
-  if (endFreq && endFreq !== startFreq) {
+  if (endFreq) {
     oscillator.frequency.exponentialRampToValueAtTime(endFreq, now + duration);
   }
 
@@ -94,7 +97,6 @@ export const playMoveSound = () => {
   playTone({
     type: "square",
     startFreq: 660,
-    endFreq: 660,
     duration: 0.06,
     volume: 0.15,
   });
