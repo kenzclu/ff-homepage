@@ -20,6 +20,11 @@
   }
 
   .menu {
+    // Corner-accent bracket dimensions, referenced by both pseudo-elements
+    // below so the size/thickness only need to change in one place.
+    $corner-size: 14px;
+    $corner-thickness: 2px;
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,11 +34,12 @@
     width: 100%;
 
     // Layered double-line border: solid dark outer edge + inset light-blue
-    // line, evoking an SNES-era JRPG dialogue/menu box.
+    // line, evoking an SNES-era JRPG dialogue/menu box. The outline is
+    // pulled in via a negative offset so it renders just inside the border.
     border: 3px solid $color-secondary-dark;
     outline: 2px solid $color-secondary-blue-2;
     outline-offset: -7px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 6px 18px rgba($color-secondary-dark, 0.55);
 
     // Dark translucent navy/black gradient, ties into the navbar's palette.
     background: linear-gradient(
@@ -53,8 +59,8 @@
     &::after {
       content: "";
       position: absolute;
-      width: 14px;
-      height: 14px;
+      width: $corner-size;
+      height: $corner-size;
 
       border-style: solid;
       border-color: $color-secondary-yellow;
@@ -63,17 +69,17 @@
     }
 
     &::before {
-      top: 8px;
-      left: 8px;
+      top: $spacing-2;
+      left: $spacing-2;
 
-      border-width: 2px 0 0 2px;
+      border-width: $corner-thickness 0 0 $corner-thickness;
     }
 
     &::after {
-      bottom: 8px;
-      right: 8px;
+      bottom: $spacing-2;
+      right: $spacing-2;
 
-      border-width: 0 2px 2px 0;
+      border-width: 0 $corner-thickness $corner-thickness 0;
     }
 
     h1,
