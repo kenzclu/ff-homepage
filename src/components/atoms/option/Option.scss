@@ -48,15 +48,12 @@ $option-gutter-width: 1.2em;
   }
 }
 
-// Mouse hover, or an explicit `selected` prop forcing the state on.
+// Mouse hover, an explicit `selected` prop forcing the state on, or
+// keyboard focus of the ancestor <Link> (an <a>, since .option itself
+// isn't focusable — Option is normally rendered inside a react-router
+// <Link>, so we key off the focused ancestor instead).
 .option:hover,
-.option.option--selected {
-  @include option-active;
-}
-
-// Option is normally rendered inside a react-router <Link> (an <a>), which
-// is the element that actually receives keyboard focus — .option itself
-// isn't focusable, so we key off the focused ancestor instead.
+.option--selected,
 a:focus-visible .option {
   @include option-active;
 }
