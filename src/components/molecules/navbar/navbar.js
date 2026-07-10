@@ -10,13 +10,10 @@ function Navbar() {
   const history = useHistory();
   const lastActiveTab = parseInt(localStorage.getItem("lastActive"));
   const [activeTab, setActiveTab] = useState(lastActiveTab || 0);
-  const [muted, setMuted] = useState(false);
-
-  // Initialize the displayed mute state from whatever was persisted in a
-  // previous session (localStorage), not just component default state.
-  useEffect(() => {
-    setMuted(isMuted());
-  }, []);
+  // Lazy initializer: isMuted() is a synchronous localStorage read, so this
+  // reflects a mute persisted in a prior session on the very first render
+  // instead of flashing the default and correcting it after mount.
+  const [muted, setMuted] = useState(() => isMuted());
 
   useEffect(() => {
     setActiveTab(
@@ -32,8 +29,11 @@ function Navbar() {
     });
   });
 
-  // Home is always index 0 in `paths` (see router.js).
-  const isHome = activeTab === 0;
+  // Derive the Home entry from `paths` itself (matched by its path) rather
+  // than assuming it's always index 0, so this can't drift out of sync with
+  // router.js.
+  const homeIndex = paths.findIndex((path) => path.path === "/");
+  const isHome = activeTab === homeIndex;
 
   const handleToggleMute = () => {
     setMuted(toggleMuted());
@@ -49,7 +49,7 @@ function Navbar() {
               Home
             </span>
           ) : (
-            <Link to="/" className="home-shortcut">
+            <Link to={paths[homeIndex].path} className="home-shortcut">
               Home
             </Link>
           )}
