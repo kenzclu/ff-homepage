@@ -11,9 +11,13 @@
 
   height: inherit;
   width: 70%;
-  max-width: $monitor;
+  max-width: $monitor-sm;
   min-width: $mobile-sm;
   max-height: 640px;
+
+  .back {
+    font-size: $font-2xl;
+  }
 
   .menu {
     display: flex;
@@ -29,11 +33,6 @@
 
     overflow-y: scroll;
 
-    .back {
-      font-size: $font-2xl;
-      margin-bottom: $spacing-2;
-    }
-
     &.page-center {
       align-items: center;
       justify-content: center;
@@ -42,7 +41,6 @@
 
   @media screen and (max-width: $mobile) {
     width: 100%;
-    max-height: none;
     overflow-x: scroll;
     overflow-y: scroll;
   }
