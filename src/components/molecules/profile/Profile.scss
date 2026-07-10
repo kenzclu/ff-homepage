@@ -1,5 +1,12 @@
 @import "../../../styles/theme";
 
+// Local stat-bar colors, kept in step with the existing theme palette.
+// HP: a green in the spirit of $color-secondary-blue's saturation/value,
+// nudged toward the classic JRPG "healthy" tint.
+$color-stat-hp: #3fbf6f;
+// MP: reuse the theme's secondary blue tints directly.
+$color-stat-mp: $color-secondary-blue;
+
 .profile-container {
   display: flex;
   flex-direction: row;
@@ -24,5 +31,58 @@
     align-items: flex-start;
 
     margin: $spacing-4;
+
+    .profile-stats {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: $spacing-2;
+      gap: $spacing-1;
+    }
+
+    .stat-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      font-size: $font-xs;
+
+      .stat-bar-label {
+        width: 1.5rem;
+        font-weight: $font-bold;
+        color: $color-primary-dark;
+      }
+
+      .stat-bar-track {
+        flex: 1;
+        height: $spacing-2;
+        margin: 0 $spacing-2;
+        background-color: $color-grey-1;
+        border: 1px solid $color-primary-dark;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .stat-bar-fill {
+        height: 100%;
+        border-radius: 1px;
+        transition: width $a-short ease-in-out;
+      }
+
+      .stat-bar-value {
+        width: 2.25rem;
+        text-align: right;
+        color: $color-primary-grey;
+      }
+
+      &.stat-bar-hp .stat-bar-fill {
+        background-color: $color-stat-hp;
+      }
+
+      &.stat-bar-mp .stat-bar-fill {
+        background-color: $color-stat-mp;
+      }
+    }
   }
 }
