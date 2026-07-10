@@ -5,7 +5,7 @@ import {
   playMoveSound,
   playConfirmSound,
   playCancelSound,
-} from "./sfx";
+} from "../sfx";
 
 class MockOscillatorNode {
   constructor() {
