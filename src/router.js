@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/molecules/navbar/navbar";
+import Chocobo from "./components/molecules/chocobo/Chocobo";
 import Contact from "./components/pages/contact/contact";
 import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
@@ -64,6 +65,7 @@ function Base() {
           <Redirect to="/" />
         </Switch>
       </div>
+      <Chocobo />
     </BrowserRouter>
   );
 }

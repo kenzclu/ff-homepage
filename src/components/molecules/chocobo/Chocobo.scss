@@ -1,0 +1,76 @@
+@import "../../../styles/theme";
+
+$chocobo-frame-size: 30px;
+$chocobo-frame-count: 10;
+$chocobo-scale: 2;
+$chocobo-size: $chocobo-frame-size * $chocobo-scale;
+$chocobo-sheet-width: $chocobo-size * $chocobo-frame-count;
+
+.chocobo-walker {
+  position: absolute;
+  left: $spacing-3;
+  bottom: $spacing-0;
+  z-index: 2;
+
+  width: $chocobo-size;
+  height: $chocobo-size;
+
+  pointer-events: none;
+
+  overflow-y: hidden;
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.chocobo-sprite {
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: $chocobo-sheet-width $chocobo-size;
+
+  image-rendering: pixelated;
+
+  // chocobo-walk.png holds two native-facing halves: frames 0-4 run left,
+  // frames 5-9 run right, so each direction plays its own half - no flip.
+  &--walk-left,
+  &--walk-right {
+    background-image: url("../../../assets/chocobo-walk.png");
+  }
+
+  &--walk-left {
+    animation: chocobo-walk-left-frames 0.6s steps(#{$chocobo-frame-count / 2}) infinite;
+  }
+
+  &--walk-right {
+    animation: chocobo-walk-right-frames 0.6s steps(#{$chocobo-frame-count / 2}) infinite;
+  }
+
+  &--idle {
+    background-image: url("../../../assets/chocobo-idle.png");
+    animation: chocobo-idle-frames 1.2s steps(#{$chocobo-frame-count}) infinite;
+  }
+}
+
+@mixin chocobo-frame-step($from, $to) {
+  from {
+    background-position-x: $from;
+  }
+  to {
+    background-position-x: $to;
+  }
+}
+
+@keyframes chocobo-walk-left-frames {
+  @include chocobo-frame-step(0, -$chocobo-sheet-width / 2);
+}
+
+@keyframes chocobo-walk-right-frames {
+  @include chocobo-frame-step(-$chocobo-sheet-width / 2, -$chocobo-sheet-width);
+}
+
+@keyframes chocobo-idle-frames {
+  @include chocobo-frame-step(0, -$chocobo-sheet-width);
+}
