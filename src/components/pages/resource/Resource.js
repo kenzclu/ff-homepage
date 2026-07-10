@@ -3,7 +3,6 @@ import "./Resource.scss";
 import Page from "../../atoms/page/Page";
 import Icon from "../../atoms/icon/Icon";
 import linkedin from "../../../assets/linkedin.png";
-import document from "../../../assets/document.png";
 import github from "../../../assets/github.png";
 
 function Resource() {
