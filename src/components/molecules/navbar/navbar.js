@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 
-import chock from "../../../assets/chocobo.gif";
+import PixelIcon from "../../atoms/pixel-icon/PixelIcon";
+import {
+  HOME_BITMAP,
+  SPEAKER_ON_BITMAP,
+  SPEAKER_OFF_BITMAP,
+} from "./navbarIcons";
 import { paths } from "../../../router";
 import { isMuted, toggleMuted } from "../../atoms/sfx/sfx";
 import "./navbar.scss";
@@ -33,7 +38,6 @@ function Navbar() {
   // than assuming it's always index 0, so this can't drift out of sync with
   // router.js.
   const homeIndex = paths.findIndex((path) => path.path === "/");
-  const isHome = activeTab === homeIndex;
 
   const handleToggleMute = () => {
     setMuted(toggleMuted());
@@ -43,16 +47,9 @@ function Navbar() {
     <div className="navbar">
       <div className="bottom">
         <div className="side left">
-          <img src={chock} alt="chocobo running" />
-          {isHome ? (
-            <span className="home-shortcut is-disabled" aria-disabled="true">
-              Home
-            </span>
-          ) : (
-            <Link to={paths[homeIndex].path} className="home-shortcut">
-              Home
-            </Link>
-          )}
+          <Link to={paths[homeIndex].path} className="home-shortcut" aria-label="Home">
+            <PixelIcon bitmap={HOME_BITMAP} />
+          </Link>
         </div>
 
         <div className="crumb">
@@ -75,9 +72,8 @@ function Navbar() {
             aria-label={muted ? "Unmute sound effects" : "Mute sound effects"}
             aria-pressed={muted}
           >
-            {muted ? "🔇" : "🔊"}
+            <PixelIcon bitmap={muted ? SPEAKER_OFF_BITMAP : SPEAKER_ON_BITMAP} />
           </button>
-          <img src={chock} alt="chocobo running" />
         </div>
       </div>
     </div>

@@ -47,13 +47,6 @@
 
     color: $color-secondary-blue-4;
 
-    img {
-      padding: 0 $spacing-4;
-
-      height: $spacing-12;
-      width: auto;
-    }
-
     .side {
       display: flex;
       align-items: center;
@@ -77,44 +70,12 @@
       }
     }
 
-    .home-shortcut {
-      font-size: $font-2xl;
-      font-weight: $font-medium;
-      text-transform: uppercase;
-      text-decoration: none;
-      letter-spacing: 1px;
-
-      color: $color-secondary-blue-4;
-      border: 1px solid $color-secondary-blue-2;
-      border-radius: 2px;
-      padding: $spacing-1 $spacing-3;
-
-      transition: color $a-short, border-color $a-short;
-
-      &:hover,
-      &:focus-visible {
-        color: $color-secondary-yellow;
-        border-color: $color-secondary-yellow;
-      }
-
-      &.is-disabled {
-        color: $color-primary-dark-3;
-        border-color: $color-primary-dark-3;
-        cursor: default;
-        pointer-events: none;
-      }
-    }
-
+    .home-shortcut,
     .mute-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-
-      font-size: $font-2xl;
-      line-height: 1;
-      padding: $spacing-1 $spacing-3;
+      display: inline-flex;
 
       color: $color-secondary-blue-4;
+      padding: $spacing-2 $spacing-3;
 
       transition: color $a-short;
 
@@ -124,16 +85,18 @@
       }
     }
 
+    .home-shortcut {
+      text-decoration: none;
+    }
+
+    .mute-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     @media screen and (max-width: $mobile) {
       font-size: $font-3xl;
-
-      .home-shortcut {
-        font-size: $font-lg;
-      }
-
-      .mute-toggle {
-        font-size: $font-lg;
-      }
     }
   }
 

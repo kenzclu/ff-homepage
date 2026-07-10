@@ -1,7 +1,7 @@
 const MUTE_STORAGE_KEY = "sfx-muted";
 
 // Default mute state when nothing has been persisted yet.
-const DEFAULT_MUTED = false;
+const DEFAULT_MUTED = true;
 
 // Lazily-created singleton AudioContext. Browsers require it to be created
 // (or resumed) after a user gesture, and creating a new one per sound is

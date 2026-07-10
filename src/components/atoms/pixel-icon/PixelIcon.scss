@@ -1,0 +1,25 @@
+@import "../../../styles/theme";
+
+.pixel-icon {
+  --pixel-size: 3px;
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: var(--pixel-size);
+    height: var(--pixel-size);
+
+    box-shadow: var(--pixel-shadow);
+  }
+
+  @media screen and (max-width: $mobile) {
+    --pixel-size: 2px;
+  }
+}
