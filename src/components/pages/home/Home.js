@@ -10,7 +10,7 @@ import "./Home.scss";
 const menuItems = [
   { label: "WEBSITE", to: "/about/website" },
   { label: "RESOURCES", to: "/resources" },
-  { label: "PROJECTS", to: "/projects" },
+  // { label: "PROJECTS", to: "/projects" },
   { label: "CONTACT", to: "/contact" },
 ];
 
