@@ -1,27 +1,20 @@
 {
   "files": {
-    "main.css": "/ff-homepage/static/css/main.506aa8c9.chunk.css",
-    "main.js": "/ff-homepage/static/js/main.5492f433.chunk.js",
-    "main.js.map": "/ff-homepage/static/js/main.5492f433.chunk.js.map",
-    "runtime-main.js": "/ff-homepage/static/js/runtime-main.f548fc88.js",
-    "runtime-main.js.map": "/ff-homepage/static/js/runtime-main.f548fc88.js.map",
-    "static/js/2.0d4b1e94.chunk.js": "/ff-homepage/static/js/2.0d4b1e94.chunk.js",
-    "static/js/2.0d4b1e94.chunk.js.map": "/ff-homepage/static/js/2.0d4b1e94.chunk.js.map",
+    "main.css": "/ff-homepage/static/css/main.5a62e2c4.css",
+    "main.js": "/ff-homepage/static/js/main.9a4ed36c.js",
+    "static/media/dnd.png": "/ff-homepage/static/media/dnd.4c450284bf3901fd1e4e.png",
+    "static/media/background.jpg": "/ff-homepage/static/media/background.8335ad315c1042e62759.jpg",
+    "static/media/webdev.png": "/ff-homepage/static/media/webdev.9d8a05dbc40d98b826c7.png",
+    "static/media/uni.png": "/ff-homepage/static/media/uni.0bbc0f4a7857b42e2562.png",
+    "static/media/chocobo.gif": "/ff-homepage/static/media/chocobo.2c20cc4d7ebd453eb623.gif",
+    "static/media/profile.jpg": "/ff-homepage/static/media/profile.81f26eff5f51e98b4175.jpg",
+    "static/media/logo.png": "/ff-homepage/static/media/logo.18f869be2a7551353287.png",
     "index.html": "/ff-homepage/index.html",
-    "static/css/main.506aa8c9.chunk.css.map": "/ff-homepage/static/css/main.506aa8c9.chunk.css.map",
-    "static/js/2.0d4b1e94.chunk.js.LICENSE.txt": "/ff-homepage/static/js/2.0d4b1e94.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/ff-homepage/static/media/background.8335ad31.jpg",
-    "static/media/chocobo.2c20cc4d.gif": "/ff-homepage/static/media/chocobo.2c20cc4d.gif",
-    "static/media/dnd.4c450284.png": "/ff-homepage/static/media/dnd.4c450284.png",
-    "static/media/Website.scss": "/ff-homepage/static/media/logo.18f869be.png",
-    "static/media/profile.81f26eff.jpg": "/ff-homepage/static/media/profile.81f26eff.jpg",
-    "static/media/uni.0bbc0f4a.png": "/ff-homepage/static/media/uni.0bbc0f4a.png",
-    "static/media/webdev.9d8a05db.png": "/ff-homepage/static/media/webdev.9d8a05db.png"
+    "main.5a62e2c4.css.map": "/ff-homepage/static/css/main.5a62e2c4.css.map",
+    "main.9a4ed36c.js.map": "/ff-homepage/static/js/main.9a4ed36c.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.f548fc88.js",
-    "static/js/2.0d4b1e94.chunk.js",
-    "static/css/main.506aa8c9.chunk.css",
-    "static/js/main.5492f433.chunk.js"
+    "static/css/main.5a62e2c4.css",
+    "static/js/main.9a4ed36c.js"
   ]
 }
