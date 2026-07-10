@@ -6,9 +6,39 @@ h1 {
   width: 100%;
 }
 
-.menu-options {
+.home-panes {
+  display: flex;
+  gap: $spacing-4;
+
+  width: 100%;
+}
+
+.party-pane,
+.menu-pane {
   display: flex;
   flex-direction: column;
 
   width: 50%;
+}
+
+.party-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: $mobile) {
+  .home-panes {
+    flex-direction: column;
+  }
+
+  .party-pane,
+  .menu-pane {
+    width: 100%;
+  }
 }
