@@ -15,8 +15,9 @@
   }
 
   .stat-bar-track {
+    position: relative;
     flex: 1;
-    height: $spacing-2;
+    height: $spacing-4;
     margin: 0 $spacing-2;
     background-color: $color-grey-1;
     border: 1px solid $color-primary-dark;
@@ -31,9 +32,12 @@
   }
 
   .stat-bar-value {
-    width: 2.25rem;
-    text-align: right;
-    color: $color-primary-grey;
+    position: absolute;
+    top: 50%;
+    right: $spacing-1;
+    transform: translateY(-50%);
+    color: $color-white;
+    text-shadow: 0 0 2px rgba($color-primary-dark, 0.8);
   }
 
   &.stat-bar-hp .stat-bar-fill {
