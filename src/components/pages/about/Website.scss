@@ -1,11 +1,21 @@
 @import "../../../styles/theme";
 
-.logo {
-  width: auto;
-  height: $spacing-24;
+.website {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
 
-  background-image: url(../../../assets/logo.png);
-  background-repeat: no-repeat;
-  background-size: auto $spacing-16;
-  background-position: center;
+  &__logo {
+    flex-shrink: 0;
+    width: $spacing-24;
+    height: $spacing-24;
+
+    background-image: url(../../../assets/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    border: 1px solid black;
+    box-shadow: 2px 2px grey;
+  }
 }
