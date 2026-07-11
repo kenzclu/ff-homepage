@@ -4,9 +4,18 @@
 
 body {
   min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: "Open Sans", sans-serif;
 
   background-image: url(./assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @media screen and (max-width: $mobile) {
+    background-attachment: scroll;
+  }
 }
 
 a {
@@ -29,8 +38,4 @@ a:hover {
   max-width: $monitor;
   min-width: $mobile-sm;
   height: calc(100vh - #{$spacing-32});
-
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
