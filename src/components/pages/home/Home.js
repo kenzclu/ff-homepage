@@ -73,7 +73,11 @@ function Home() {
           <div className="party-list">
             {party.map((member) => (
               <Link key={member.name} to={member.link}>
-                <Profile profile={member.profile} label={member.name} />
+                <Profile
+                  profile={member.profile}
+                  label={member.name}
+                  rows={member.rows}
+                />
               </Link>
             ))}
           </div>

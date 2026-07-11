@@ -1,0 +1,45 @@
+@import "../../../styles/theme";
+
+%pixel-card {
+  border: 1px solid black;
+  box-shadow: 2px 2px grey;
+}
+
+.boffy {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+
+  &__portrait {
+    flex-shrink: 0;
+    width: $spacing-24;
+    height: $spacing-24;
+
+    object-fit: cover;
+
+    @extend %pixel-card;
+  }
+
+  &__abilities-intro {
+    margin: 0 0 $spacing-2;
+  }
+
+  &__abilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-2;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li {
+      padding: $spacing-1 $spacing-3;
+
+      background-color: $color-secondary-yellow-3;
+
+      @extend %pixel-card;
+    }
+  }
+}
