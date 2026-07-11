@@ -12,17 +12,20 @@ function randomStat(max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function Profile({ profile, label }) {
+function Profile({ profile, label, rows = [] }) {
   // Computed once per mount so the values don't jitter on re-render
   const [{ hp, mp }] = useState(() => ({ hp: randomStat(MAX_HP), mp: randomStat(MAX_MP) }));
 
   return (
     <div className="profile-container">
-      <img className="profile-image" src={profile} alt="Chubby the chocobo" />
+      <img className="profile-image" src={profile} alt={label} />
       <div className="profile-description">
         <h4>{label}</h4>
-        <div>LVL: Senior Software Engineer</div>
-        <div>JOB: Editing Performance @ Canva</div>
+        {rows.map(({ label: rowLabel, value }) => (
+          <div key={rowLabel}>
+            {rowLabel}: {value}
+          </div>
+        ))}
         <div className="profile-stats">
           <StatBar label="HP" value={hp} max={MAX_HP} />
           <StatBar label="MP" value={mp} max={MAX_MP} />

@@ -9,6 +9,7 @@ import About from "./components/pages/about/About";
 import Resource from "./components/pages/resource/Resource";
 import Project from "./components/pages/project/Project";
 import Website from "./components/pages/about/Website";
+import Boffy from "./components/pages/about/Boffy";
 
 export const paths = [
   {
@@ -22,6 +23,12 @@ export const paths = [
     exact: true,
     component: Website,
     name: "About Website",
+  },
+  {
+    path: "/about/boffy",
+    exact: true,
+    component: Boffy,
+    name: "About Boffy",
   },
   {
     path: "/about",
