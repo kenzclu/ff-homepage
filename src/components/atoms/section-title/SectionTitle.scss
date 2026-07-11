@@ -1,0 +1,11 @@
+@import "../../../styles/theme";
+
+.section-title {
+  margin: 0 0 $spacing-2;
+  padding-bottom: $spacing-1;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  border-bottom: 1px solid $color-secondary-yellow-3;
+}

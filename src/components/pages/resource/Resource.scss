@@ -1,9 +1,15 @@
 @import "../../../styles/theme";
 
-.test {
+.resource {
   display: flex;
   flex-direction: column;
-  padding: $spacing-4;
+  gap: $spacing-6;
 
-  width: 100%;
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+
+    padding-top: $spacing-2;
+  }
 }

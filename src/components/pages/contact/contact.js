@@ -5,6 +5,8 @@ import useAPI from "../../../services/api";
 import { sendEmail } from "../../../services/request";
 import "./contact.scss";
 import Page from "../../atoms/page/Page";
+import PageHeader from "../../molecules/page-header/PageHeader";
+import SectionTitle from "../../atoms/section-title/SectionTitle";
 
 function Contact() {
   const [message, setMessage] = useState("");
@@ -29,30 +31,34 @@ function Contact() {
   return (
     <Page back>
       <div className="contact">
-        <h1>CONTACT INFORMATION</h1>
-        <div>
-          Email me at{" "}
-          <u>
-            <b>ken.zc.lu@gmail.com</b>
-          </u>
-        </div>
-        <h2>OR</h2>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <textarea
-            placeholder="Enter message here..."
-            value={message}
-            onChange={onMessageChange}
-            rows={5}
-          />
-          <input
-            disabled={!canSubmit}
-            className={classNames({ disabled: !canSubmit })}
-            type="submit"
-            value={inProgress ? "Sending..." : "Send"}
-          />
-        </form>
-        {!!error && <div className="error">Email failed to send</div>}
-        {!!data && <div className="success">Email sent successfully</div>}
+        <PageHeader
+          name="CONTACT INFORMATION"
+          rows={[{ label: "EMAIL", value: "ken.zc.lu@gmail.com" }]}
+        />
+
+        <section className="contact__section">
+          <SectionTitle>Send a message</SectionTitle>
+          <form className="contact__form" onSubmit={handleSubmit}>
+            <textarea
+              placeholder="Enter message here..."
+              value={message}
+              onChange={onMessageChange}
+              rows={5}
+            />
+            <input
+              disabled={!canSubmit}
+              className={classNames({ disabled: !canSubmit })}
+              type="submit"
+              value={inProgress ? "Sending..." : "Send"}
+            />
+          </form>
+          {!!error && (
+            <div className="contact__error">Email failed to send</div>
+          )}
+          {!!data && (
+            <div className="contact__success">Email sent successfully</div>
+          )}
+        </section>
       </div>
     </Page>
   );

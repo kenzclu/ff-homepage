@@ -4,7 +4,7 @@
   padding: $spacing-2;
   margin-bottom: $spacing-4;
 
-  width: inherit;
+  width: 100%;
 
   border-color: $color-primary-dark-3;
   border-radius: $spacing-1;
@@ -13,58 +13,52 @@
 .contact {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: $spacing-6;
 
-  text-align: center;
-
-  font-size: $font-xl;
-
-  h2 {
-    padding: $spacing-4 0;
-  }
-
-  > form {
+  &__form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: $spacing-4;
 
     width: 100%;
 
-    > input {
+    textarea {
+      @extend %input;
+    }
+
+    input[type="submit"] {
       @extend %input;
 
+      align-self: flex-start;
+
+      width: $spacing-32;
       height: $spacing-12;
+
+      color: white;
+      background-color: $color-secondary-blue;
+      border: none;
 
       &.disabled {
         background-color: $color-primary-grey;
       }
     }
-
-    > textarea {
-      @extend %input;
-    }
-
-    [type="submit"] {
-      margin: 0;
-
-      width: $spacing-32;
-
-      color: white;
-      background-color: $color-secondary-blue;
-    }
   }
 
-  .error {
-    margin: $spacing-4 0;
-
-    height: $spacing-8;
-    width: $spacing-64;
-
-    line-height: $spacing-8;
+  &__error,
+  &__success {
+    margin-top: $spacing-4;
+    padding: $spacing-2 $spacing-3;
 
     color: white;
+
+    border: 1px solid black;
+    box-shadow: 2px 2px grey;
+  }
+
+  &__error {
     background-color: red;
+  }
+
+  &__success {
+    background-color: $color-stat-hp;
   }
 }
