@@ -20,10 +20,6 @@
     @extend %pixel-card;
   }
 
-  &__abilities-intro {
-    margin: 0 0 $spacing-2;
-  }
-
   &__abilities {
     display: flex;
     flex-wrap: wrap;

@@ -35,9 +35,6 @@ function Boffy() {
 
         <section className="boffy__section">
           <SectionTitle>Abilities</SectionTitle>
-          <p className="boffy__abilities-intro">
-            Boffy's signature moves include:
-          </p>
           <ul className="boffy__abilities">
             <li>The Zoomies</li>
             <li>Treat Negotiation</li>
