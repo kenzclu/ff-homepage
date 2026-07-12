@@ -55,7 +55,7 @@ export const paths = [
 
 function Base() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Navbar />
       <div className="page-container">
         <Switch>
