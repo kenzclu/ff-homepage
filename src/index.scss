@@ -7,15 +7,6 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   font-family: "Open Sans", sans-serif;
-
-  background-image: url(./assets/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-
-  @media screen and (max-width: $mobile) {
-    background-attachment: scroll;
-  }
 }
 
 a {

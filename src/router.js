@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom";
 
+import Background from "./components/atoms/background/Background";
 import Navbar from "./components/molecules/navbar/navbar";
 import Chocobo from "./components/molecules/chocobo/Chocobo";
 import Contact from "./components/pages/contact/contact";
@@ -56,6 +57,7 @@ export const paths = [
 function Base() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Background />
       <Navbar />
       <div className="page-container">
         <Switch>
